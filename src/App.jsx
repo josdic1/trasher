@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import HouseProvider from './providers/HouseProvider'
+import PickupProvider from './providers/PickupProvider'
 import './App.css'
 
 function App() {
@@ -11,9 +12,9 @@ function App() {
       </header>
       <main>
         <HouseProvider>
-
+        <PickupProvider>
           <Outlet />
-
+        </PickupProvider>
         </HouseProvider>
       </main>
     </>

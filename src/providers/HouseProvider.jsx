@@ -3,6 +3,11 @@ import HouseContext from "../contexts/HouseContext"
 
 function HouseProvider({children}) {
     const [ houses, setHouses ] = useState([])
+    const [ selectedHouse, setSelectedHouse ] = useState({
+        id: "",
+        address: "",
+        score: 0
+    })
 
     useEffect(() => {
         fetchHouses()
@@ -22,7 +27,7 @@ function HouseProvider({children}) {
 return (
 <>
 <HouseContext.Provider
-value={{ houses }}
+value={{ houses, selectedHouse, setSelectedHouse }}
 >
     {children}
 </HouseContext.Provider>

@@ -8,6 +8,7 @@ return (
 {error.type}
 {error.message}
 {error.status}
+<a href="/">Go</a>
 </>
 )}
 

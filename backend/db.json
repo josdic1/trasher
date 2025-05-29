@@ -1,40 +1,66 @@
 {
-"houses": [
-    {"id": "xx1", "address": "300 Cedar Ave", "score": 85},
-    {"id": "xx2", "address": "Maple Blvd", "score": 72},
-    {"id": "xx3", "address": "Elm St", "score": 91}
-],
-
-"pickups": [
+  "houses": [
     {
-        "id": "xx1-1052425-0900a",
-        "cid": "xx1",
-        "activity_code": 1,
-        "bags": 2,
-        "weight": 25,
-        "subtotal": 50,
-        "acc_weight": 50,
-        "timestamp": "052425-0900a"
+      "cid": "xx1",
+      "address": "300 Cedar Ave",
+      "score": 85
     },
     {
-        "id": "xx2-1052425-0905a",
-        "cid": "xx2",
-        "activity_code": 1,
-        "bags": 1,
-        "weight": 30,
-        "subtotal": 30,
-        "acc_weight": 80,
-        "timestamp": "052425-0905a"
+      "cid": "xx2",
+      "address": "Maple Blvd",
+      "score": 72
     },
     {
-        "id": "xx1-2052425-0910a",
-        "cid": "xx1",
-        "activity_code": 2,
-        "bags": 1,
-        "weight": 25,
-        "subtotal": -25,
-        "acc_weight": 55,
-        "timestamp": "052425-0910a"
+      "cid": "xx3",
+      "address": "Elm St",
+      "score": 91
     }
-]
+  ],
+  "pickups": [
+    {
+      "id": "xx1-1052425-0900a",
+      "cid": "xx1",
+      "activity_code": 1,
+      "bags": 2,
+      "weight": 50,
+      "acc_weight": 50,
+      "timestamp": "052425-0900a"
+    },
+    {
+      "pid": "xx2-1052425-0905a",
+      "cid": "xx2",
+      "activity_code": 1,
+      "bags": 3,
+      "weight": 80,
+      "acc_weight": 80,
+      "timestamp": "052425-0905a"
+    },
+    {
+      "pid": "xx1-2052425-0910a",
+      "cid": "xx1",
+      "activity_code": 2,
+      "bags": -1,
+      "weight": -25,
+      "acc_weight": 25,
+      "timestamp": "052425-0910a"
+    },
+    {
+      "pid": "xx1-3052925-1110a",
+      "cid": "xx1",
+      "activity_code": 3,
+      "bags": 1,
+      "weight": 50,
+      "acc_weight": 75,
+      "timestamp": "052925-1110a"
+    },
+    {
+      "pid": "xx3-1052925-1303p",
+      "cid": "xx3",
+      "activity_code": 1,
+      "bags": 6,
+      "weight": 100,
+      "acc_weight": 100,
+      "timestamp": "052925-1303p"
+    }
+  ]
 }

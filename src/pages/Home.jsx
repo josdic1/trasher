@@ -4,7 +4,7 @@ function Home() {
 
 return (
 <>
-<h1>HI HOME</h1>
+<h1>🚛 T R A S H 🚛 </h1>
 </>
 )}
 
