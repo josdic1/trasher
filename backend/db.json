@@ -1,5 +1,5 @@
 {
-"customers": [
+"houses": [
     {"id": "xx1", "address": "300 Cedar Ave", "score": 85},
     {"id": "xx2", "address": "Maple Blvd", "score": 72},
     {"id": "xx3", "address": "Elm St", "score": 91}
