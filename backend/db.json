@@ -8,7 +8,7 @@
     },
     {
       "hid": "xx2",
-      "address": "Maple Blvd",
+      "address": "Maple Dr",
       "score": 72,
       "id": "6376"
     },
@@ -23,12 +23,13 @@
     {
       "pid": "xx1-1052425-0900a",
       "hid": "xx1",
-      "activity_code": 1,
-      "bags": 2,
-      "weight": 50,
+      "activity_code": 3,
+      "bags": "1",
+      "weight": "177",
       "acc_weight": 50,
       "timestamp": "052425-0900",
-      "id": "2ca6"
+      "id": "2ca6",
+      "score": ""
     },
     {
       "pid": "xx2-1052425-0905",
@@ -51,36 +52,48 @@
       "id": "f83e"
     },
     {
-      "pid": "xx1-3052925-1110",
+      "id": "a1cf",
       "hid": "xx1",
+      "pid": "xx1-1053025-1030",
       "activity_code": 3,
-      "bags": 1,
-      "weight": 50,
-      "acc_weight": 75,
-      "timestamp": "052925-1110",
-      "id": "b130"
+      "bags": "1",
+      "weight": "1",
+      "acc_weight": "1",
+      "score": 85,
+      "timestamp": "053025-1030"
     },
     {
-      "id": "61fe",
+      "id": "f687",
       "hid": "xx3",
-      "pid": "xx3-1053025-1002",
+      "pid": "xx3-1053025-1042",
       "activity_code": 1,
-      "bags": "1",
-      "weight": "200",
+      "bags": 4,
+      "weight": 400,
       "acc_weight": "",
       "score": 91,
-      "timestamp": "053025-1002"
+      "timestamp": "053025-1042"
     },
     {
-      "id": "545f",
+      "id": "ba87",
+      "hid": "xx1",
+      "pid": "xx1-1053025-1045",
+      "activity_code": 3,
+      "bags": "4",
+      "weight": "4",
+      "acc_weight": "",
+      "score": 85,
+      "timestamp": "053025-1045"
+    },
+    {
+      "id": "e53b",
       "hid": "xx2",
-      "pid": "xx2-1053025-1007",
+      "pid": "xx2-1053025-1053",
       "activity_code": 1,
-      "bags": "10",
-      "weight": "200",
+      "bags": 5,
+      "weight": 505,
       "acc_weight": "",
       "score": 72,
-      "timestamp": "053025-1007"
+      "timestamp": "053025-1053"
     }
   ]
 }

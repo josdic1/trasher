@@ -11,7 +11,7 @@ function PickupList() {
 
     const onPickupClick = (obj, btn) => {
         if(btn === "btn-edit") {
-            navigate(`/edit/${obj.id}`)
+            navigate(`/pickup-edit/${obj.id}`)
         } else {
            if(btn === "btn-delete") {
             navigate("/pickups")
@@ -35,14 +35,14 @@ return (
             <tr>
             <th>EDIT</th>
             <th>DEL</th>
-            <th>ID</th>
-            <th>PID</th>
             <th>HID</th>
-            <th>ACT_CODE</th>
-            <th>BAG_COUNT</th>
-            <th>TOT_WEIGHT</th>
-            <th>ACC_WEIGHT</th>
-            <th>TIMESTAMP</th>
+            <th>ACT</th>
+            <th>BAGS</th>
+            <th>TOT</th>
+            <th>ACC</th>
+            <th>TIME</th>
+            <th>PID</th>
+            <th>ID</th>
             </tr>
         </thead>
         <tbody>

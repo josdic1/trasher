@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom"
 import PickupContext from "../contexts/PickupContext"
 import HouseContext from "../contexts/HouseContext"
 import getTimestamp from "../utils/getTimestamp"
+// import getNextAccWeight from "../utils/getNextAccWeight"
 
-
-function New() {
+function PickupNew() {
     const { selectedHouse, setSelectedHouse } = useContext(HouseContext)
-    const { selectedPickup, handleNewPickup } = useContext(PickupContext)
+    const { handleNewPickup } = useContext(PickupContext)
 
 
     const [ formData, setFormData ] = useState({
@@ -28,7 +28,7 @@ useEffect(() => {
     hid: selectedHouse.hid,
     score: selectedHouse.score,
   }))
-}, [!selectedHouse])
+}, [selectedHouse])
 
 const navigate = useNavigate()
    
@@ -41,16 +41,21 @@ const navigate = useNavigate()
             }))
     }
 
-    let pickupString = ""
+    // const lastAcc = getNextAccWeight(pickups, formData.hid)
+    // const accWeight = lastAcc + Number(formData.weight)
+    
     const onSubmit = (e) => {
         e.preventDefault()
         const stamp = getTimestamp()
-        pickupString = `${selectedHouse.hid}-1${stamp}`
+        const pickupString = `${selectedHouse.hid}-1${stamp}`
+        
         const newPickup = {
             ...formData,
+            weight: Number(formData.weight),
+            bags: Number(formData.bags),
             pid: pickupString,
             activity_code: 1,
-            timestamp: stamp
+            timestamp: stamp,
         }
         handleNewPickup(newPickup)
         onCancel()
@@ -99,5 +104,5 @@ return (
     </>
     )}
 
-    export default New
+    export default PickupNew
 

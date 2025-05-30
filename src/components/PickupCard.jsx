@@ -25,14 +25,15 @@ return (
                 onClick={onClick}
                 > delete </button>
         </td>
-        <td>{pickup.id}</td>
-        <td>{pickup.pid}</td>
+    
         <td>{pickup.hid}</td>
         <td>{pickup.activity_code}</td>
         <td>{pickup.bags}</td>
         <td>{pickup.weight}</td> 
         <td>{pickup.acc_weight}</td>
         <td>{pickup.timestamp}</td>
+        <td>{pickup.pid}</td>
+          <td>{pickup.id}</td>
     </tr>
 </>
 )}

@@ -2,34 +2,41 @@ import { useState, useEffect, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import PickupContext from "../contexts/PickupContext"
+import getTimestamp from "../utils/getTimestamp"
 
-
-function Edit() {
-    const { pickups, handleUpdate } = useContext(PickupContext)
+function PickupEdit() {
+    const { pickups, handleUpdatePickup } = useContext(PickupContext)
 
     const navigate = useNavigate()
 
-    const [ formData, setFormData ] = useState({
-        id: "",
-        pid: "",
-        hid: "",
-        activity_code: "",
-        bags: "",
-        weight: "",
-        acc_weight: "",
-    })
+const [ formData, setFormData ] = useState({
+  id: "",
+  pid: "",
+  hid: "",
+  activity_code: "",
+  bags: "",
+  weight: "",
+  acc_weight: "",
+  score: ""  
+})
 
     const { id } = useParams()
 
-    useEffect(() => {
-        const current = pickups.find(p => (
-            p.id === id
-        ))
-        setFormData(prev => ({
-            ...prev,
-            ...current
-        }))
-    },[id])
+useEffect(() => {
+  const current = pickups.find(p => p.id === id)
+  if (!current) return
+  setFormData(prev => ({
+    ...prev,
+    bags: current.bags || "",
+    weight: current.weight || "",
+    acc_weight: current.acc_weight || "",
+    activity_code: current.activity_code || "",
+    pid: current.pid || "",
+    hid: current.hid || "",
+    score: current.score || "",
+    id: current.id || ""
+  }))
+}, [id, pickups])
 
   
 
@@ -43,7 +50,13 @@ function Edit() {
 
     const onUpdate = (e) => {
         e.preventDefault()
-        handleUpdate()
+        const stamp = getTimestamp()
+        const updatedPickup = {
+            ...formData,
+            activity_code: 3,
+            timestamp: formData.timestamp === "" ? stamp : formData.timestamp
+        }
+        handleUpdatePickup(updatedPickup)
         onCancel()
     }
 
@@ -57,7 +70,8 @@ function Edit() {
         activity_code: "",
         bags: "",
         weight: "",
-        acc_weight: ""
+        acc_weight: "",
+        score: ""
         })
     }
 
@@ -87,11 +101,10 @@ return (
         <label htmlFor="score"> 🔢 HOUSE_ID_SCORE </label>
         <input type="number" name="score" readOnly value={formData.score} placeholder="PROPS" />
 
-        <button type="submit">Submit</button>
-        <button type="button" onClick={onClear}>Clear</button>
+        <button type="submit">Update</button>
         <button type="button" onClick={onCancel}>Cancel</button>
     </form>
     </>
     )}
 
-    export default Edit
+    export default PickupEdit

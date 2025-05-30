@@ -6,18 +6,28 @@ import HouseContext from "../contexts/HouseContext"
 
 function HouseList() {
 
-    const { houses, setSelectedHouse } = useContext(HouseContext)
+
+    const { houses, setSelectedHouse, handleDeleteHouse } = useContext(HouseContext)
 
 
     const navigate = useNavigate()
-
-    const onNewPickUpClick = (obj) => {
-        setSelectedHouse(obj)
-        navigate("/new")
+        const onEditClick = (id) => {
+        navigate(`/house-edit/${id}`)
     }
 
-    const onViewHistoryClick = (obj) => {
-        setSelectedHouse(obj)
+    const onDeleteClick = (id) => {
+        handleDeleteHouse(id)
+        navigate("/houses")
+    }
+
+
+
+    const onNewPickUpClick = (house) => {
+        setSelectedHouse(house)
+        navigate(`/pickup-new`)
+    }
+
+    const onViewHistoryClick = (id) => {
         navigate("/pickups")
     }
 
@@ -26,7 +36,9 @@ function HouseList() {
         <HouseCard 
             key={house.id} 
             house={house} 
-            onNewPickUpClick={onNewPickUpClick} 
+            onNewPickUpClick={onNewPickUpClick}
+            onEditClick={onEditClick}
+            onDeleteClick={onDeleteClick}
             onViewHistoryClick={onViewHistoryClick}
         />
     ))
@@ -43,6 +55,8 @@ return (
             <th>Address</th>
             <th>Score</th>
             <th>NEW_PICK</th>
+            <th>EDIT</th>
+              <th>DEL</th>
             <th>VIEW_HIST</th>
             </tr>
         </thead>

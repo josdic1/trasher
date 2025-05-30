@@ -1,7 +1,10 @@
 import App from "./App"
 import Error from "./pages/Error"
-import Edit from "./forms/Edit"
-import New from "./forms/New"
+import ToDo from "./pages/ToDo"
+import HouseEdit from "./forms/HouseEdit"
+import HouseNew from "./forms/HouseNew"
+import PickupEdit from "./forms/PickupEdit"
+import PickupNew from "./forms/PickupNew"
 import PickupList from "./pages/PickupList"
 import Home from "./pages/Home"
 import HouseList from "./pages/HouseList"
@@ -20,10 +23,19 @@ const routes = [
                 path: "/pickups", element: <PickupList />, errorElement: <Error/>
             },
                  { 
-                path: "/new", element: <New />, errorElement: <Error/>
+                path: "/pickup-new", element: <PickupNew />, errorElement: <Error/>
             },
             { 
-                path: "/edit/:id", element: <Edit />, errorElement: <Error/>
+                path: "/pickup-edit/:id", element: <PickupEdit />, errorElement: <Error/>
+            },
+                         { 
+                path: "/house-new", element: <HouseNew />, errorElement: <Error/>
+            },
+            { 
+                path: "/house-edit/:id", element: <HouseEdit />, errorElement: <Error/>
+            },
+                  { 
+                path: "/todo", element: <ToDo />, errorElement: <Error/>
             },
         ]
     }

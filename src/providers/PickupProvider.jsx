@@ -57,10 +57,28 @@ function PickupProvider({ children }) {
         }catch (error) {console.error("❌ Caught error:", error);}
     }
 
+        async function handleUpdatePickup(obj) {
+        try{
+            const r = await fetch(`http://localhost:3000/pickups/${obj.id}`, {
+                method: "PATCH",
+                headers: {
+               'Content-Type': 'application/json'
+               }, 
+               body: JSON.stringify(obj)
+            })
+            if(!r.ok) {
+                throw new Error("💥 Error");
+            }
+            const data = await r.json()
+            const updated = pickups.map(p => p.pid === data.pid ? data : p)
+            setPickups(updated)
+        }catch (error) {console.error("❌ Caught error:", error);}
+    }
+
 return (
 <>
 <PickupContext.Provider
-    value={{ pickups, handleNewPickup, handleDeletePickup }}
+    value={{ pickups, handleNewPickup, handleDeletePickup, handleUpdatePickup }}
 >
    { children } 
 </PickupContext.Provider>
