@@ -5,8 +5,9 @@ function HouseProvider({children}) {
     const [ houses, setHouses ] = useState([])
     const [ selectedHouse, setSelectedHouse ] = useState({
         id: "",
+        hid: "",
         address: "",
-        score: 0
+        score: ""
     })
 
     useEffect(() => {

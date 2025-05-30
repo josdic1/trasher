@@ -11,7 +11,8 @@ function Edit() {
 
     const [ formData, setFormData ] = useState({
         id: "",
-        cid: "",
+        pid: "",
+        hid: "",
         activity_code: "",
         bags: "",
         weight: "",
@@ -43,23 +44,16 @@ function Edit() {
     const onUpdate = (e) => {
         e.preventDefault()
         handleUpdate()
+        onCancel()
     }
 
-    const onClear = () => {
-        setFormData(prev =>  ({
-            ...prev,
-        activity_code: "",
-        bags: "",
-        weight: "",
-        acc_weight: ""
-        })
-    )}
 
     const onCancel = () => {
         navigate("/pickups")
         setFormData({
         id: "",
-        cid: "",
+        hid: "",
+        pid: "",
         activity_code: "",
         bags: "",
         weight: "",
@@ -72,8 +66,11 @@ function Edit() {
 return (
     <>
     <form onSubmit={onUpdate}> 
-        <label htmlFor="cid"> 🏘 HOUSE_ID </label>
-        <input type="text" name="cid" readOnly value={formData.cid} placeholder="House ID..." />
+        <label htmlFor="hid"> 🏘 HOUSE_ID </label>
+        <input type="text" name="hid" readOnly value={formData.hid} placeholder="House ID..." />
+
+                <label htmlFor="pid"> 🛻 PICKUP_ID </label>
+        <input type="text" name="pid" readOnly value={formData.pid} placeholder="Pickup ID...." />
 
                 <label htmlFor="bags"> 🗑 BAG_COUNT </label>
         <input type="number" name="bags" onChange={onFormChange} value={formData.bags} placeholder="Number of Bags..." />

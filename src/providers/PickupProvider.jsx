@@ -1,19 +1,11 @@
 import { useState, useEffect } from "react"
 import PickupContext from "../contexts/PickupContext"
-import { stringify } from "uuid"
+
 
 function PickupProvider({ children }) {
 
     const [ pickups, setPickups ] = useState([])
-    const [ selectedPickup, setSelectedPickup] = useState({
-        id: "",
-        cid: "",
-        activity_code: "",
-        bags: "",
-        weight: "",
-        acc_weight: "",
-        timestamp: ""
-    })
+
 
 
     useEffect(() => {
@@ -39,21 +31,19 @@ function PickupProvider({ children }) {
                headers: {
                'Content-Type': 'application/json'
                }, 
-               body: JSON.stringify()
+               body: JSON.stringify(obj)
             })
             if(!r.ok) {
                 throw new Error("💥 Error");
             }
             const data = await r.json()
             const updated = [...pickups, data]
-            console.log(updated)
             setPickups(updated)
-            setSelectedPickup({})
         }catch (error) {console.error("❌ Caught error:", error);}
     }
 
 
-    async function deletePickup(pid) {
+    async function handleDeletePickup(pid) {
         try{
             const r = await fetch(`http://localhost:3000/pickups/${pid}`, {
                 method: "DELETE"
@@ -70,7 +60,7 @@ function PickupProvider({ children }) {
 return (
 <>
 <PickupContext.Provider
-    value={{ pickups, selectedPickup, setSelectedPickup, handleNewPickup, deletePickup }}
+    value={{ pickups, handleNewPickup, handleDeletePickup }}
 >
    { children } 
 </PickupContext.Provider>

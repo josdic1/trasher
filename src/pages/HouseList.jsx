@@ -39,10 +39,11 @@ return (
         <thead>
             <tr>
             <th>ID</th>
+            <th>HID</th>
             <th>Address</th>
             <th>Score</th>
-            <th>NEW_PICKUP</th>
-            <th>VIEW_</th>
+            <th>NEW_PICK</th>
+            <th>VIEW_HIST</th>
             </tr>
         </thead>
         <tbody>

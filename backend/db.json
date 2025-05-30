@@ -1,66 +1,86 @@
 {
   "houses": [
     {
-      "cid": "xx1",
+      "hid": "xx1",
       "address": "300 Cedar Ave",
-      "score": 85
+      "score": 85,
+      "id": "2d64"
     },
     {
-      "cid": "xx2",
+      "hid": "xx2",
       "address": "Maple Blvd",
-      "score": 72
+      "score": 72,
+      "id": "6376"
     },
     {
-      "cid": "xx3",
+      "hid": "xx3",
       "address": "Elm St",
-      "score": 91
+      "score": 91,
+      "id": "1ecb"
     }
   ],
   "pickups": [
     {
-      "id": "xx1-1052425-0900a",
-      "cid": "xx1",
+      "pid": "xx1-1052425-0900a",
+      "hid": "xx1",
       "activity_code": 1,
       "bags": 2,
       "weight": 50,
       "acc_weight": 50,
-      "timestamp": "052425-0900a"
+      "timestamp": "052425-0900",
+      "id": "2ca6"
     },
     {
-      "pid": "xx2-1052425-0905a",
-      "cid": "xx2",
+      "pid": "xx2-1052425-0905",
+      "hid": "xx2",
       "activity_code": 1,
       "bags": 3,
       "weight": 80,
       "acc_weight": 80,
-      "timestamp": "052425-0905a"
+      "timestamp": "052425-0905",
+      "id": "d9e1"
     },
     {
-      "pid": "xx1-2052425-0910a",
-      "cid": "xx1",
+      "pid": "xx1-2052425-0910",
+      "hid": "xx1",
       "activity_code": 2,
       "bags": -1,
       "weight": -25,
       "acc_weight": 25,
-      "timestamp": "052425-0910a"
+      "timestamp": "052425-0910",
+      "id": "f83e"
     },
     {
-      "pid": "xx1-3052925-1110a",
-      "cid": "xx1",
+      "pid": "xx1-3052925-1110",
+      "hid": "xx1",
       "activity_code": 3,
       "bags": 1,
       "weight": 50,
       "acc_weight": 75,
-      "timestamp": "052925-1110a"
+      "timestamp": "052925-1110",
+      "id": "b130"
     },
     {
-      "pid": "xx3-1052925-1303p",
-      "cid": "xx3",
+      "id": "61fe",
+      "hid": "xx3",
+      "pid": "xx3-1053025-1002",
       "activity_code": 1,
-      "bags": 6,
-      "weight": 100,
-      "acc_weight": 100,
-      "timestamp": "052925-1303p"
+      "bags": "1",
+      "weight": "200",
+      "acc_weight": "",
+      "score": 91,
+      "timestamp": "053025-1002"
+    },
+    {
+      "id": "545f",
+      "hid": "xx2",
+      "pid": "xx2-1053025-1007",
+      "activity_code": 1,
+      "bags": "10",
+      "weight": "200",
+      "acc_weight": "",
+      "score": 72,
+      "timestamp": "053025-1007"
     }
   ]
 }

@@ -2,13 +2,17 @@ import { useState, useEffect, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import PickupContext from "../contexts/PickupContext"
 import HouseContext from "../contexts/HouseContext"
+import getTimestamp from "../utils/getTimestamp"
+
 
 function New() {
     const { selectedHouse, setSelectedHouse } = useContext(HouseContext)
     const { selectedPickup, handleNewPickup } = useContext(PickupContext)
 
+
     const [ formData, setFormData ] = useState({
-        cid: "",
+        hid: "",
+        pid: "",
         activity_code: "",
         bags: "",
         weight: "",
@@ -21,10 +25,10 @@ useEffect(() => {
 
   setFormData(prev => ({
     ...prev,
-    cid: selectedHouse.id,
+    hid: selectedHouse.hid,
     score: selectedHouse.score,
   }))
-}, [selectedHouse !== null])
+}, [!selectedHouse])
 
 const navigate = useNavigate()
    
@@ -37,29 +41,29 @@ const navigate = useNavigate()
             }))
     }
 
+    let pickupString = ""
     const onSubmit = (e) => {
         e.preventDefault()
+        const stamp = getTimestamp()
+        pickupString = `${selectedHouse.hid}-1${stamp}`
         const newPickup = {
             ...formData,
-            activity_code: 1
+            pid: pickupString,
+            activity_code: 1,
+            timestamp: stamp
         }
         handleNewPickup(newPickup)
         onCancel()
-    }
+    }   
 
-    const onClear = () => {
-        setFormData(prev =>  ({
-            ...prev,
-        bags: "",
-        weight: ""
-        })
-    )}
+
 
     const onCancel = () => {
         setSelectedHouse(null)
         navigate("/pickups")
         setFormData({
-        cid: "",
+        hid: "",
+        pid: "",
         activity_code: "",
         bags: "",
         weight: "",
@@ -71,8 +75,8 @@ const navigate = useNavigate()
 return (
     <>
     <form onSubmit={onSubmit}> 
-        <label htmlFor="cid"> 🏘 HOUSE_ID </label>
-        <input type="text" name="cid" readOnly value={formData.cid} placeholder="House ID..." />
+        <label htmlFor="hid"> 🏘 HOUSE_ID </label>
+        <input type="text" name="hid" readOnly value={formData.hid} placeholder="House ID..." />
 
         <label htmlFor="activity_code"> ☢️ ACTIVITY_CODE  </label>
         <input type="number" name="activity_code" onChange={onFormChange} value={formData.activity_code} placeholder="Activity code..." />
@@ -90,7 +94,6 @@ return (
         <input type="number" name="score" readOnly value={formData.score} placeholder="PROPS" />
 
         <button type="submit">Submit</button>
-        <button type="button" onClick={onClear}>Clear</button>
         <button type="button" onClick={onCancel}>Cancel</button>
     </form>
     </>

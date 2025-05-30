@@ -10,6 +10,7 @@ function HouseCard({ house, onNewPickUpClick, onViewHistoryClick }) {
         <>
             <tr>
                 <td>{house.id}</td>
+                <td>{house.hid}</td>
                 <td>{house.address}</td>
                 <td>{house.score}</td>
                 <td>

@@ -5,18 +5,17 @@ import PickupContext from "../contexts/PickupContext"
 
 function PickupList() {
 
-    const { pickups, setSelectedPickup, deletePickup } = useContext(PickupContext)
+    const { pickups, handleDeletePickup } = useContext(PickupContext)
 
     const navigate = useNavigate()
 
     const onPickupClick = (obj, btn) => {
         if(btn === "btn-edit") {
-            setSelectedPickup(obj)
             navigate(`/edit/${obj.id}`)
         } else {
            if(btn === "btn-delete") {
             navigate("/pickups")
-            deletePickup(obj.id)
+            handleDeletePickup(obj.id)
            }
         }
     }
@@ -25,8 +24,7 @@ function PickupList() {
         <PickupCard 
             key={pickup.id} 
             pickup={pickup}
-            onPickupClick={onPickupClick}
-            
+            onPickupClick={onPickupClick} 
         />
     ))
 
@@ -36,12 +34,13 @@ return (
         <thead>
             <tr>
             <th>EDIT</th>
-            <th>DELETE</th>
-            <th>PICKUP_ID</th>
-            <th>HOUSE_ID</th>
-            <th>ACTIVITY_CODE</th>
+            <th>DEL</th>
+            <th>ID</th>
+            <th>PID</th>
+            <th>HID</th>
+            <th>ACT_CODE</th>
             <th>BAG_COUNT</th>
-            <th>TOTAL_WEIGHT</th>
+            <th>TOT_WEIGHT</th>
             <th>ACC_WEIGHT</th>
             <th>TIMESTAMP</th>
             </tr>
