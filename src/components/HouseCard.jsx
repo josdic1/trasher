@@ -1,44 +1,40 @@
 
 function HouseCard({ house, onNewPickUpClick, onEditClick, onDeleteClick, onViewHistoryClick }) {
 
-    const onClick = (e) => {
-        const { name, id } = e.target
-         if(name === "edit") {
-            onEditClick(id)
-        } else {
-           if(name === "del") {
-            onDeleteClick(id)
-        } else {
-            if(name === "new-pickup") {
-                onNewPickUpClick(house)
-            
-        } else {
-                 if(name === "new-pickup") {
-                onViewHistoryClick(id)
-            }
-        }
-        }
-    }}
+   const onClick = (e) => {
+  const { name, id } = e.target;
+  if (name === "edit") {
+    onEditClick(id);
+  } else if (name === "del") {
+    onDeleteClick(id);
+  } else if (name === "new-pickup") {
+    onNewPickUpClick(house);
+  } else if (name === "view-history") {
+    onViewHistoryClick(id);
+  }
+};
 
     return (
         <>
             <tr>
-                <td>{house.id}</td>
-                <td>{house.hid}</td>
+   
+                <td>{house.houseId}</td>
                 <td>{house.address}</td>
-                <td>{house.score}</td>
+               <td style={{ color: house.score >= 90 ? "green" : house.score < 70 ? "red" : "black" }}>
+    {house.score}
+</td>
                 <td>
-                    <button id={house.id} name="new-pickup" onClick={onClick}> 🆕 🗑 </button>
+                    <button id={house.houseId} name="new-pickup" onClick={onClick}> 🆕 🗑 </button>
                 </td>
         
                 <td>
-                    <button type="button" id={house.id} name="edit" onClick={onClick}> edit </button>
+                    <button type="button" id={house.houseId} name="edit" onClick={onClick}> edit </button>
                 </td>
                       <td>
-                    <button type="button" id={house.id} name="del" onClick={onClick}> del </button>
+                    <button type="button" id={house.houseId} name="del" onClick={onClick}> del </button>
                 </td>
                                      <td>
-                    <button id={house.id} name="view-history" onClick={onClick}> 🚛 🗓  </button>
+                    <button id={house.houseId} name="view-history" onClick={onClick}> 🚛 🗓  </button>
                 </td>
             </tr>
         </>

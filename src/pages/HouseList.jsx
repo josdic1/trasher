@@ -23,18 +23,23 @@ function HouseList() {
 
 
     const onNewPickUpClick = (house) => {
-        setSelectedHouse(house)
+        setSelectedHouse({
+            houseId: house.houseId,
+            address: house.address,
+            score: house.score
+        })
         navigate(`/pickup-new`)
     }
 
     const onViewHistoryClick = (id) => {
+        console.log("onViewHistoryClick: ",id)
         navigate("/pickups")
     }
 
 
     const houseData = houses.map(house => (
         <HouseCard 
-            key={house.id} 
+            key={house.houseId} 
             house={house} 
             onNewPickUpClick={onNewPickUpClick}
             onEditClick={onEditClick}
@@ -50,7 +55,6 @@ return (
     <table>
         <thead>
             <tr>
-            <th>ID</th>
             <th>HID</th>
             <th>Address</th>
             <th>Score</th>

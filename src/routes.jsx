@@ -25,15 +25,20 @@ const routes = [
                  { 
                 path: "/pickup-new", element: <PickupNew />, errorElement: <Error/>
             },
-            { 
-                path: "/pickup-edit/:id", element: <PickupEdit />, errorElement: <Error/>
-            },
+          { 
+  path: "/pickup-edit/:pickupId", 
+  element: <PickupEdit />, 
+  errorElement: <Error />
+},
+{ 
+  path: "/house-edit/:houseId", 
+  element: <HouseEdit />, 
+  errorElement: <Error />
+},
                          { 
                 path: "/house-new", element: <HouseNew />, errorElement: <Error/>
             },
-            { 
-                path: "/house-edit/:id", element: <HouseEdit />, errorElement: <Error/>
-            },
+    
                   { 
                 path: "/todo", element: <ToDo />, errorElement: <Error/>
             },

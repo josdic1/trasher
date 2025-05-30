@@ -1,60 +1,56 @@
 {
   "houses": [
     {
-      "hid": "xx1",
+      "houseId": "2d64",
       "address": "300 Cedar Ave",
-      "score": 85,
-      "id": "2d64"
+      "score": 85
     },
     {
-      "hid": "xx2",
-      "address": "Maple Dr",
-      "score": 72,
-      "id": "6376"
+      "houseId": "6a76",
+      "address": "23 Maple Blvd",
+      "score": 69
     },
     {
-      "hid": "xx3",
-      "address": "Elm St",
-      "score": 91,
-      "id": "1ecb"
+      "houseId": "1ecb",
+      "address": "586 Elm St",
+      "score": 91
+
     }
   ],
   "pickups": [
     {
-      "pid": "xx1-1052425-0900a",
-      "hid": "xx1",
+      "pickupId": "2d64-1052425-0900a",
+      "houseId": "2d64",
       "activity_code": 3,
       "bags": "1",
       "weight": "177",
       "acc_weight": 50,
       "timestamp": "052425-0900",
-      "id": "2ca6",
-      "score": ""
+      "score": 85
     },
     {
-      "pid": "xx2-1052425-0905",
-      "hid": "xx2",
+      "pickupId": "6a76-1052425-0905",
+      "houseId": "6a76",
       "activity_code": 1,
       "bags": 3,
       "weight": 80,
       "acc_weight": 80,
       "timestamp": "052425-0905",
-      "id": "d9e1"
+      "score": 69
     },
     {
-      "pid": "xx1-2052425-0910",
-      "hid": "xx1",
+      "pickupId": "2d64-2052425-0910",
+      "houseId": "2d64",
       "activity_code": 2,
       "bags": -1,
       "weight": -25,
       "acc_weight": 25,
       "timestamp": "052425-0910",
-      "id": "f83e"
+      "score": 85
     },
     {
-      "id": "a1cf",
-      "hid": "xx1",
-      "pid": "xx1-1053025-1030",
+      "houseId": "2d64",
+      "pickupId": "2d64-1053025-1030",
       "activity_code": 3,
       "bags": "1",
       "weight": "1",
@@ -63,9 +59,9 @@
       "timestamp": "053025-1030"
     },
     {
-      "id": "f687",
-      "hid": "xx3",
-      "pid": "xx3-1053025-1042",
+
+      "houseId": "1ecb",
+      "pickupId": "1ecb-1053025-1042",
       "activity_code": 1,
       "bags": 4,
       "weight": 400,
@@ -74,9 +70,8 @@
       "timestamp": "053025-1042"
     },
     {
-      "id": "ba87",
-      "hid": "xx1",
-      "pid": "xx1-1053025-1045",
+      "houseId": "2d64",
+      "pickupId": "2d64-1053025-1045",
       "activity_code": 3,
       "bags": "4",
       "weight": "4",
@@ -85,14 +80,13 @@
       "timestamp": "053025-1045"
     },
     {
-      "id": "e53b",
-      "hid": "xx2",
-      "pid": "xx2-1053025-1053",
+      "houseId": "6a76",
+      "pickupId": "6a76-1053025-1053",
       "activity_code": 1,
       "bags": 5,
       "weight": 505,
       "acc_weight": "",
-      "score": 72,
+      "score": 69,
       "timestamp": "053025-1053"
     }
   ]
